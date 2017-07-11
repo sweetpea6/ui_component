@@ -1,45 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title> 탭 메뉴 </title>
-</head>
-<body>
-
-<header class="header">
-  <nav class="gnb">
-    <ul class="gnb-depth1">
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">탭메뉴</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item"><a href="#" class="gnb-depth2-link">jQuery</a></li>
-          <li class="gnb-depth2-item"><a href="#" class="gnb-depth2-link">CSS</a></li>
-        </ul>
-      </li>
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">아코디언메뉴</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item"><a href="#" class="gnb-depth2-link">jQuery</a></li>
-          <li class="gnb-depth2-item"><a href="#" class="gnb-depth2-link">CSS</a></li>
-        </ul>
-      </li>
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">상단메뉴</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item"><a href="#" class="gnb-depth2-link">jQuery</a></li>
-          <li class="gnb-depth2-item"><a href="#" class="gnb-depth2-link">CSS</a></li>
-        </ul>
-      </li>
-      <li class="gnb-depth1-item">
-        <a href="#" class="gnb-depth1-link">이미지슬라이딩</a>
-        <ul class="gnb-depth2">
-          <li class="gnb-depth2-item"><a href="#" class="gnb-depth2-link">jQuery</a></li>
-          <li class="gnb-depth2-item"><a href="#" class="gnb-depth2-link">CSS</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</header>
+<!--=include _include/_header_tab_menu.html -->
 
 <section>
 
@@ -47,9 +6,11 @@
 
   <div class="tab-wrap">
 
-    <h2 class="tab-heading">HTML</h2>
+    <h2 class="tab-heading html">
+      <a href="#" class="on">HTML</a>
+    </h2>
 
-    <div class="tab-content">
+    <div class="tab-content on">
 
       <h2>HTML</h2>
       <hr />
@@ -129,7 +90,7 @@
       <h2>역사</h2>
       <hr />
 
-      <img src="images/Tim_Berners-Lee_April_2009.jpg" />
+      <img src="../images/Tim_Berners-Lee_April_2009.jpg" />
 
       <h3>개발</h3>
 
@@ -854,7 +815,9 @@
 
     </div>
 
-    <h2 class="tab-heading">CSS</h2>
+    <h2 class="tab-heading css">
+      <a href="#">CSS</a>
+    </h2>
 
     <div class="tab-content">
 
@@ -1151,7 +1114,9 @@
 
     </div>
 
-    <h2 class="tab-heading">Javascript</h2>
+    <h2 class="tab-heading js">
+      <a href="#">Javascript</a>
+    </h2>
 
     <div class="tab-content">
 
@@ -1289,9 +1254,4 @@
 
 </section>
 
-<footer></footer>
-
-
-
-</body>
-</html>
+<!--=include _include/_footer.html -->

@@ -1,0 +1,45 @@
+.header{
+  border-bottom: 1px solid aqua;
+  margin-bottom: 100px;
+}
+
+.gnb{
+
+  padding: 20px 0;
+  background: #ddd;
+
+  &-depth1{
+    width: 600px;
+    margin: 0 auto;
+
+    &:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    &-item{
+      float: left;
+      width: 25%;
+      text-align: center;
+    }
+
+    &-link:hover{
+      text-decoration: underline;
+    }
+
+  }
+
+  &-depth2{
+    margin-top: 20px;
+
+    &-item{
+      margin-top: 10px;
+    }
+
+    &-link:hover{
+      text-decoration: underline;
+    }
+  }
+
+}

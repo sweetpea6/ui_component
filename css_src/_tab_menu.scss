@@ -1,0 +1,58 @@
+h1{
+  font-size: 30px;
+  border-bottom: 1px solid #c4a2e2;
+  margin: 0 auto 50px;
+  width: 960px;
+  padding-bottom: 10px;
+  font-weight: bold;
+
+}
+
+.tab{
+  &-wrap{
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 100px;
+  }
+
+  &-heading{
+    width: 33.33%;
+    position: absolute;
+    top: 0;
+
+
+    &.css{
+      left: 33.33%;
+    }
+
+    &.js{
+      left: 66.66%;
+    }
+
+    >a{
+      display: block;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid aquamarine;
+      box-sizing: border-box;
+      background: #fff;
+
+      &.on{
+        color: #333;
+        background: palegreen;
+        border-color: aquamarine;
+
+      }
+    }
+  }
+
+  &-content{
+    display: none;
+
+    &.on{
+      display: block;
+    }
+  }
+
+}
