@@ -10,23 +10,6 @@ var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 
-/*
-gulp. task(task�̸�, �Լ�/�͸��Լ�);
- */
-
-gulp.task('hello1', function(){
-  return console.log('Hello World!');
-});
-
-gulp.task('hello2', function(){
-  return console.log('Hello World!');
-});
-
-gulp.task('hello3', function(){
-  return console.log('Hello World!');
-});
-
-
 //pipe() ����� ����� �������ִ� �Լ�
 
 // ���� ��ħ
@@ -78,7 +61,23 @@ gulp.task('gnbmenu', function() {
       .pipe(gulp.dest('js/'));
 });
 
-gulp.task('jsconcat', ['tabmenu','gnbmenu']);
+gulp.task('timingfunction', function() {
+  return gulp.src('js_src/timing_function/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(concat('timing_function.js'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('js/'));
+});
+
+gulp.task('imagesliding', function() {
+  return gulp.src('js_src/image_sliding/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(concat('image_sliding.js'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('js/'));
+});
+
+gulp.task('jsconcat', ['tabmenu','gnbmenu','timingfunction', 'imagesliding']);
 
 gulp.task('default',['livereload','include','sass','tabmenu','jsconcat','watch']);
 

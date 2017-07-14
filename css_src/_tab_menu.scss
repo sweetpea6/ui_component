@@ -2,15 +2,6 @@
 
 /* Tab Menu Styling */
 
-// 공통 제목 스타일링
-h1{
-  font-size: 30px;
-  border-bottom: 1px solid #c4a2e2;
-  margin: 0 auto 50px;
-  width: 960px;
-  padding-bottom: 10px;
-  font-weight: bold;
-}
 
 
 // js 애니메이션용 style
@@ -56,6 +47,7 @@ h1{
 
 // css 애니메이션용 style
 .css-tab {
+
   &-wrap {
     width: 960px;
     margin: 0 auto;
@@ -96,6 +88,7 @@ h1{
   }
 
   &-content{
+    width: 100%;
     // display 속성은 애니메이션 적용이 되지 않음.
     visibility: hidden;
     opacity: 0;

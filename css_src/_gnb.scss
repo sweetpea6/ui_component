@@ -43,3 +43,32 @@
   }
 
 }
+
+.util{
+
+  padding: 10px 0;
+  background: #333;
+  border-bottom: 1px solid aquamarine;
+
+  &-menu{
+    width: 600px;
+    margin: 0 auto;
+    text-align: right;
+  }
+
+  &-link{
+    color: #fff;
+  }
+
+}
+
+// 공통 제목 스타일링
+.cate-heading{
+  font-size: 30px;
+  border-bottom: 1px solid #c4a2e2;
+  margin: 0 auto 50px;
+  width: 960px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
