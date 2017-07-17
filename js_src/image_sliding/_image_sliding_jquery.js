@@ -6,9 +6,10 @@ $(function(){
 
   // 선언부
   function init(){
-    $('.view-image').eq(0).css({left : 0});
-    $('.view-image').eq(1).css({left : 400});
-    $('.view-image').eq(2).css({left : -400});
+    $('.js-sliding .view-image').eq(0).css({left : 0});
+    $('.js-sliding .view-image').eq(1).css({left : 400});
+    $('.js-sliding .view-image').eq(2).css({left : -400});
+
     marginCtrlWrap();
     paging();
   }
@@ -17,15 +18,15 @@ $(function(){
   var nextIndex = 0;
   var timeID;
   var checkID;
+
   function moveLeft(){
 
-    if(nextIndex >= $('.view-image').length){
+    if(nextIndex >= $('.js-sliding .view-image').length){
       nextIndex = 0;
     }
 
-
-    $('.view-image').eq(currentIndex).stop().animate({left:-400}, 2000, 'easeOutBounce');
-    $('.view-image').eq(nextIndex).css({left:400}).stop().animate({left:0}, 2000, 'easeOutBounce');
+    $('.js-sliding .view-image').eq(currentIndex).stop().animate({left:-400}, 2000, 'easeOutBounce');
+    $('.js-sliding .view-image').eq(nextIndex).css({left:400}).stop().animate({left:0}, 2000, 'easeOutBounce');
 
     currentIndex = nextIndex;
 
@@ -55,8 +56,8 @@ $(function(){
   }
 
   function marginCtrlWrap(){
-    var wrapWidth = $('.control-wrap').width();
-    $('.control-wrap').css({
+    var wrapWidth = $('.js-sliding .control-wrap').width();
+    $('.js-sliding .control-wrap').css({
       'margin-left' : -( wrapWidth / 2 )
     });
   }
@@ -64,7 +65,7 @@ $(function(){
   function paging(){
     var imgNumber = $('.view-image').length;
     for(var i=0; i<imgNumber; i++){
-      $('.paging').append('<li class="paging-item"><a href="#" class="paging-link">' + (i+1) + '</a></li>');
+      $('.paging').append('<li class=".js-sliding paging-item"><a href="#" class=".js-sliding paging-link">' + (i+1) + '</a></li>');
     }
   }
   function clickPaging(){
