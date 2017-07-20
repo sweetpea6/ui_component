@@ -124,12 +124,14 @@ $(function(){
     $(e.target).removeClass('pause').addClass('play');
     $(e.target).text('Play');
   });
+
   $(document).on('click', '.btn-control.play', function(e){
     autoRolling();
 
     $(e.target).removeClass('play').addClass('pause');
     $(e.target).text('Pause');
   });
+
   $(document).on('click', '.paging-item', function(e){
 
     e.preventDefault();
@@ -137,6 +139,7 @@ $(function(){
     var indexNumber = $(this).index('.paging-item');
 
     if(currentIndex != indexNumber) {
+
       if (currentIndex == 0) {
         if (indexNumber == $('.view-image').length - 1) {
           nextIndex = currentIndex - 1;

@@ -77,7 +77,15 @@ gulp.task('imagesliding', function() {
       .pipe(gulp.dest('js/'));
 });
 
-gulp.task('jsconcat', ['tabmenu','gnbmenu','timingfunction', 'imagesliding']);
+gulp.task('accmenu', function() {
+  return gulp.src('js_src/acc_menu/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(concat('acc_menu.js'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('js/'));
+});
+
+gulp.task('jsconcat', ['tabmenu','gnbmenu','timingfunction','imagesliding','accmenu']);
 
 gulp.task('default',['livereload','include','sass','tabmenu','jsconcat','watch']);
 
