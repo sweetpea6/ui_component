@@ -4,104 +4,104 @@
 
 $(function(){
 
-  // 선언부
-  function init(){
-    $('.css-sliding-view-image').eq(0).addClass('center');
-    $('.css-sliding-view-image').eq(1).addClass('right');
-    $('.css-sliding-view-image').eq(2).addClass('left');
-
-    marginCtrlWrap();
-    paging();
-  }
-
-  var currentIndex = 0;
-  var nextIndex = 0;
-  var prevIndex = 0;
-  var timeID;
-  var checkID;
-
-  function moveLeft(){
-    if(nextIndex >= $('.css-sliding-view-image').length){
-      nextIndex = 0;
-    }
-
-    // eq()에 음수 값을 넣어 주면 뒷 순서부터 차례대로 매칭시킴
-    $('.css-sliding-view-image').eq(currentIndex-1).removeClass('left ani').addClass('right');
-    $('.css-sliding-view-image').eq(currentIndex).removeClass('center ani').addClass('left ani');
-    $('.css-sliding-view-image').eq(nextIndex).removeClass('right').addClass('center ani');
-
-    currentIndex = nextIndex;
-    nextIndex++;
-  }
-
-  function moveRight(){
-    if(nextIndex <= -1){
-      nextIndex = $('.css-sliding-view-image').length-1;
-    }
-
-    if( prevIndex >= $('.css-sliding-view-image').length ){
-      prevIndex = 0;
-    }
-
-    $('.css-sliding-view-image').eq(prevIndex).removeClass('right ani').addClass('left');
-    $('.css-sliding-view-image').eq(currentIndex).removeClass('center ani').addClass('right ani');
-    $('.css-sliding-view-image').eq(nextIndex).removeClass('left').addClass('center ani');
-
-    currentIndex = nextIndex;
-    prevIndex = currentIndex + 1;
-    nextIndex--;
-  }
-
-  function autoRolling(){
-    if( $('.css-sliding-btn-control').hasClass('play') ){
-      $('.css-sliding-btn-control').removeClass('play').addClass('pause').text('pause');
-    }
-    timeID = setInterval(function(){
-      nextIndex = currentIndex + 1;
-      moveLeft();
-    }, 3000);
-  }
-
-  function marginCtrlWrap(){
-
-    var wrapWidth = $('.css-sliding-control-wrap').width();
-
-    $('.css-sliding-control-wrap').css({
-      'margin-left' : -( wrapWidth / 2 )
-    });
-
-  }
-
-  function paging(){
-
-    var imgNumber = $('.css-sliding-view-image').length; // size() 개수 구하는 함수
-
-    for(var i=0; i<imgNumber; i++){
-
-      $('.css-sliding-paging').append('<li class="css-sliding-paging-item"><a href="#" class="css-sliding-paging-link">' + (i+1) + '</a></li>');
-
-    }
-
-  }
-
-  function pauseAndReAuto(){
-    // autoRolling() 의 setInterval을 중지 => 자동롤링 일시정지
-    clearInterval( timeID );
-    if( $('.css-sliding-btn-control').hasClass('pause') ){
-      $('.css-sliding-btn-control').removeClass('pause').addClass('play').text('play');
-    }
-    clearInterval( checkID );
-    var count = 0;
-    checkID = setInterval(function(){
-      if(count == 5){
-
-        autoRolling();
-        clearInterval(checkID);
-      }
-      console.log(count);
-      count++;
-    }, 1000);
-  }
+  //// 선언부
+  //function init(){
+  //  $('.css-sliding-view-image').eq(0).addClass('center');
+  //  $('.css-sliding-view-image').eq(1).addClass('right');
+  //  $('.css-sliding-view-image').eq(2).addClass('left');
+  //
+  //  marginCtrlWrap();
+  //  paging();
+  //}
+  //
+  //var currentIndex = 0;
+  //var nextIndex = 0;
+  //var prevIndex = 0;
+  //var timeID;
+  //var checkID;
+  //
+  //function moveLeft(){
+  //  if(nextIndex >= $('.css-sliding-view-image').length){
+  //    nextIndex = 0;
+  //  }
+  //
+  //  // eq()에 음수 값을 넣어 주면 뒷 순서부터 차례대로 매칭시킴
+  //  $('.css-sliding-view-image').eq(currentIndex-1).removeClass('left ani').addClass('right');
+  //  $('.css-sliding-view-image').eq(currentIndex).removeClass('center ani').addClass('left ani');
+  //  $('.css-sliding-view-image').eq(nextIndex).removeClass('right').addClass('center ani');
+  //
+  //  currentIndex = nextIndex;
+  //  nextIndex++;
+  //}
+  //
+  //function moveRight(){
+  //  if(nextIndex <= -1){
+  //    nextIndex = $('.css-sliding-view-image').length-1;
+  //  }
+  //
+  //  if( prevIndex >= $('.css-sliding-view-image').length ){
+  //    prevIndex = 0;
+  //  }
+  //
+  //  $('.css-sliding-view-image').eq(prevIndex).removeClass('right ani').addClass('left');
+  //  $('.css-sliding-view-image').eq(currentIndex).removeClass('center ani').addClass('right ani');
+  //  $('.css-sliding-view-image').eq(nextIndex).removeClass('left').addClass('center ani');
+  //
+  //  currentIndex = nextIndex;
+  //  prevIndex = currentIndex + 1;
+  //  nextIndex--;
+  //}
+  //
+  //function autoRolling(){
+  //  if( $('.css-sliding-btn-control').hasClass('play') ){
+  //    $('.css-sliding-btn-control').removeClass('play').addClass('pause').text('pause');
+  //  }
+  //  timeID = setInterval(function(){
+  //    nextIndex = currentIndex + 1;
+  //    moveLeft();
+  //  }, 3000);
+  //}
+  //
+  //function marginCtrlWrap(){
+  //
+  //  var wrapWidth = $('.css-sliding-control-wrap').width();
+  //
+  //  $('.css-sliding-control-wrap').css({
+  //    'margin-left' : -( wrapWidth / 2 )
+  //  });
+  //
+  //}
+  //
+  //function paging(){
+  //
+  //  var imgNumber = $('.css-sliding-view-image').length; // size() 개수 구하는 함수
+  //
+  //  for(var i=0; i<imgNumber; i++){
+  //
+  //    $('.css-sliding-paging').append('<li class="css-sliding-paging-item"><a href="#" class="css-sliding-paging-link">' + (i+1) + '</a></li>');
+  //
+  //  }
+  //
+  //}
+  //
+  //function pauseAndReAuto(){
+  //  // autoRolling() 의 setInterval을 중지 => 자동롤링 일시정지
+  //  clearInterval( timeID );
+  //  if( $('.css-sliding-btn-control').hasClass('pause') ){
+  //    $('.css-sliding-btn-control').removeClass('pause').addClass('play').text('play');
+  //  }
+  //  clearInterval( checkID );
+  //  var count = 0;
+  //  checkID = setInterval(function(){
+  //    if(count == 5){
+  //
+  //      autoRolling();
+  //      clearInterval(checkID);
+  //    }
+  //    console.log(count);
+  //    count++;
+  //  }, 1000);
+  //}
 
 
   // 실행부
